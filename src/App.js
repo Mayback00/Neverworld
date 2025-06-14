@@ -147,9 +147,8 @@ function App() {
             </a>
           </div>
         </nav>
-
         {renderContent()}
-
+        <div className="space"></div>
         <footer className="footer">
           <p>2025 Neverworld. Quisiera tener todos los derechos reservados.</p>
         </footer>
