@@ -148,11 +148,39 @@ function App() {
           </div>
         </nav>
         {renderContent()}
-        <div className="space"></div>
-        <footer className="footer">
-          <p>2025 Neverworld. Quisiera tener todos los derechos reservados.</p>
-        </footer>
       </div>
+      <footer className="footer">
+  <div className="footer-logo">
+    <img src="/nwlogo2-01.png" alt="Neverworld Logo" />
+  </div>
+
+  <div className="footer-links">
+    <a href="#">Política de privacidad</a>
+    <a href="#">Términos de servicio</a>
+    <a href="#">Sobre Neverworld</a>
+    <a href="#">Contáctanos</a>
+    <a href="#">Centro de ayuda</a>
+  </div>
+
+  <div className="footer-rating">
+    <img src="/not_rated.png" alt="Clasificación ESRB" />
+  </div>
+
+  <div className="footer-disclaimer">
+    <p>
+      Neverworld™ es una marca ficticia creada para proyectos interactivos.
+      Sus personajes, nombres y lugares son productos de la imaginación o inspirados de obras clásicas.
+    </p>
+  </div>
+
+  <div className="footer-publisher">
+    <img src="/MS_logo-01.png" alt="Mayback Studios" />
+  </div>
+
+  <div className="footer-copyright">
+    <p>Copybright ◙ MAYBACK STUDIO. Todos los derechos algún día serán reservados.</p>
+  </div>
+</footer>
     </div>
   );
 }
