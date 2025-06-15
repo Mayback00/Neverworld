@@ -17,16 +17,19 @@ body, html, #root {
 /* 2. FONDO FIJO */
 .background {
   background-image: url('/img/Cover3.png');
-  background-size: cover;
+  background-size: cover; /* Volvemos a 'cover' para que la imagen cubra siempre el elemento */
   background-position: center;
   background-attachment: fixed;
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: -5vh;   /* Mueve el elemento 5% del alto de la ventana hacia arriba */
+  left: -5vw;  /* Mueve el elemento 5% del ancho de la ventana hacia la izquierda */
+  width: 110vw;  /* Haz el elemento 10% más ancho que la ventana */
+  height: 110vh; /* Haz el elemento 10% más alto que la ventana */
   z-index: -1;
+  will-change: transform;
+  transition: transform 0.05s ease-out;
 }
+
 
 /* 3. CONTENIDO */
 .hero {

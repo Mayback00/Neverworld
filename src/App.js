@@ -2,10 +2,27 @@ import React, { useState } from "react";
 import "./HeroSection.css";
 import { MdLanguage } from "react-icons/md";
 import buttonDemo from "./assets/button_demo-01-01.png";
+import { useEffect } from "react";
+
 
 function App() {
   const [activeSection, setActiveSection] = useState("inicio");
   const [showDemo, setShowDemo] = useState(false);
+  useEffect(() => {
+  const handleMouseMove = (e) => {
+    const { innerWidth, innerHeight } = window;
+    const offsetX = (e.clientX / innerWidth - 0.5) * 10 * -1;
+      const offsetY = (e.clientY / innerHeight - 0.5) * 10 * -1;
+    const background = document.querySelector('.background');
+    if (background) {
+      background.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
+    }
+  };
+
+  window.addEventListener('mousemove', handleMouseMove);
+  return () => window.removeEventListener('mousemove', handleMouseMove);
+}, []);
+
 
   const renderContent = () => {
     switch (activeSection) {
