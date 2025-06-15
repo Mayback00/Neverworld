@@ -3,6 +3,8 @@ import "./HeroSection.css";
 import { MdLanguage } from "react-icons/md";
 import buttonDemo from "./assets/button_demo-01-01.png";
 import { useEffect } from "react";
+import { FaKickstarter } from "react-icons/fa6";
+import { FaPatreon } from "react-icons/fa6";
 
 
 function App() {
@@ -31,21 +33,30 @@ function App() {
           <div className="content">
             <h1>Apoya el proyecto</h1>
             <div className="support-buttons">
+              {/* Botón de Patreon con icono */}
               <a
                 href="https://patreon.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn"
+                className="btn-icon"
               >
-                Patreon
+                <FaPatreon
+                  alt="Patreon Icon"
+                  className="button-icon"
+                />
+                <h2> Patreon</h2>
               </a>
+              {/* Botón de Kickstarter con icono */}
               <a
                 href="https://kickstarter.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn"
+                className="btn-icon"
               >
-                Kickstarter
+                <FaKickstarter
+                  alt="Kickstarter Icon"
+                  className="button-icon"
+                /><h2> Kickstarter</h2>
               </a>
             </div>
           </div>
