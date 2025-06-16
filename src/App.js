@@ -31,7 +31,8 @@ function App() {
       case "apoyar":
         return (
           <div className="content">
-            <h1>Apoya el proyecto</h1>
+            <h1>¿Quieres apoyar el proyecto?</h1>
+            <h2>- Sé parte de los niños perdidos -</h2>
             <div className="support-buttons">
               {/* Botón de Patreon con icono */}
               <a

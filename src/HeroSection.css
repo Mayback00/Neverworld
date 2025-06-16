@@ -192,7 +192,15 @@ html,
   height: auto;
 }
 
+.content h1 {
+  font-size: 60px;
+  text-shadow: 1.5px 1.5px 2px rgba(0, 0, 0, 0.2);
+}
 
+.content h2 {
+  font-size: 20px;
+  text-shadow: 1.5px 1.5px 2px rgba(0, 0, 0, 0.2);
+}
 
 .btn-image {
   width: 300px;
