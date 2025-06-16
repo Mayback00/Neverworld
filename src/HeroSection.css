@@ -16,7 +16,6 @@ html,
   position: relative;
 }
 
-/* 2. FONDO FIJO */
 .background {
   background-image: url('/img/Cover3.png');
   background-size: cover;
@@ -32,8 +31,6 @@ html,
   transition: transform 0.05s ease-out;
 }
 
-
-/* 3. CONTENIDO */
 .hero {
   min-height: 100vh;
   scroll-snap-align: start;
@@ -67,19 +64,8 @@ html,
   width: auto;
 }
 
-
 .nav-links button {
   text-shadow: 1.5px 1.5px 2px rgba(0, 0, 0, 0.7);
-  background: none;
-  border: none;
-  color: white;
-  font-size: 1rem;
-  margin: 0 1rem;
-  cursor: pointer;
-  font-family: inherit;
-}
-
-.nav-links button {
   background: none;
   border: none;
   color: white;
@@ -98,11 +84,6 @@ html,
 
 .nav-links button.active {
   border-bottom: 2px solid white;
-}
-
-
-.nav-links button:hover {
-  text-decoration: underline;
 }
 
 .support-buttons {
@@ -132,7 +113,7 @@ html,
 
 .btn-icon h2 {
   color: rgb(255, 255, 255);
-  font-family:fantasy;
+  font-family: fantasy;
   font-weight: 400;
   text-shadow: 1.5px 1.5px 2px rgba(0, 0, 0, 0.2);
 }
@@ -152,6 +133,7 @@ html,
 
 .blog {
   max-width: 700px;
+  width: 100%;
   margin: 0 auto;
   text-align: left;
   padding: 2rem;
@@ -162,7 +144,6 @@ html,
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   font-weight: 400;
 }
-
 
 .social {
   position: absolute;
@@ -177,7 +158,6 @@ html,
   height: 24px;
 }
 
-
 .content {
   flex-grow: 1;
   display: flex;
@@ -190,6 +170,7 @@ html,
   margin-bottom: 5rem;
   max-width: 600px;
   height: auto;
+  width: 100%;
 }
 
 .content h1 {
@@ -215,7 +196,6 @@ html,
   justify-content: center;
   transition: all 0.3s ease;
   opacity: 0.9;
-  /* ALFA: 90% visible */
   background-color: transparent;
 }
 
@@ -226,16 +206,13 @@ html,
   font-family: 'Uncial Antiqua', cursive;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
   pointer-events: none;
-  /* No bloquea clics */
 }
 
 .btn-image:hover {
   transform: scale(1.05);
   opacity: 1;
-  /* En hover, más visible */
   filter: brightness(1.15) drop-shadow(0 0 8px rgba(255, 255, 255, 0.3));
 }
-
 
 .btn-text {
   color: white;
@@ -245,7 +222,6 @@ html,
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
   pointer-events: none;
 }
-
 
 .video-wrapper {
   width: 90%;
@@ -326,4 +302,95 @@ html,
   color: #aaa;
   font-size: 0.75rem;
   margin-top: 0.5rem;
+}
+
+/* ---------------------- */
+/*       RESPONSIVE       */
+/* ---------------------- */
+@media (max-width: 768px) {
+  .app-wrapper {
+    scroll-snap-type: none;
+  }
+
+  .hero {
+    padding: 1rem;
+    align-items: center;
+    text-align: center;
+  }
+
+  .navbar {
+    flex-direction: column;
+    height: auto;
+    gap: 1rem;
+  }
+
+  .logo {
+    position: static;
+    margin-top: 1rem;
+    text-align: center;
+  }
+
+  .logo img {
+    height: 80px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .content h1 {
+    font-size: 36px;
+  }
+
+  .content h2 {
+    font-size: 18px;
+  }
+
+  .btn-image {
+    width: 90%;
+    height: 60px;
+  }
+
+  .btn-text {
+    font-size: 1rem;
+  }
+
+  .support-buttons {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .blog {
+    font-size: 1rem;
+    padding: 1rem;
+  }
+
+  .video-wrapper {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .social {
+    position: static;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  .footer {
+    font-size: 0.8rem;
+    padding: 1rem;
+  }
+
+  .footer-logo img,
+  .footer-rating img,
+  .footer-publisher img {
+    height: 80px;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
 }
