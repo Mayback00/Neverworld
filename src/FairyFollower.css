@@ -2,13 +2,15 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
   background: radial-gradient(circle, rgba(218, 230, 173, 0.9), rgba(229, 255, 0, 0.4));
   pointer-events: none;
-  box-shadow: 0 0 15px 5px rgba(173,216,230,0.7);
+  box-shadow: 0 0 15px 5px rgba(229, 230, 173, 0.7);
   mix-blend-mode: screen;
   transition: transform 0.1s ease-out;
+  animation: pulse 2s infinite ease-in-out;
+  transform: translate(-50%, -50%);
   z-index: 9999;
 }
