@@ -5,6 +5,7 @@ import buttonDemo from "./assets/button_demo-01-01.png";
 import { useEffect } from "react";
 import { FaKickstarter } from "react-icons/fa6";
 import { FaPatreon } from "react-icons/fa6";
+import FairyFollower from './FairyFollower';
 
 
 function App() {
@@ -147,6 +148,7 @@ function App() {
 
   return (
     <div className="app-wrapper">
+       <FairyFollower />
       <div className="background" />
 
       <div className="hero">
