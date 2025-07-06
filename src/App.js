@@ -149,6 +149,16 @@ function App() {
   return (
     <div className="app-wrapper">
        <FairyFollower />
+       <video
+      className="video-background"
+      autoPlay
+      muted
+      loop
+      playsInline
+    >
+      <source src="/videos/kairos-bg.mp4" type="video/mp4" />
+      Tu navegador no soporta video HTML5.
+    </video>
       <div className="background" />
 
       <div className="hero">
@@ -190,7 +200,7 @@ function App() {
           </div>
 
           <div className="social">
-            <a href="https://discord.gg/qnbr5WpQ">
+            <a href="https://discord.gg/YHjPHbnKSq">
               <img
                 src="https://img.icons8.com/ios-filled/24/ffffff/discord-logo.png"
                 alt="Discord"
