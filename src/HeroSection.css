@@ -36,8 +36,8 @@ html,
   bottom: 5%;
   left: 50%;
   transform: translateX(-50%);
-  width: 1000px;
-  z-index: 1;
+  width: 700px;
+  z-index: -1;
   pointer-events: none;
   animation: float 3s ease-in-out infinite;
 }

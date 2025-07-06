@@ -16,7 +16,7 @@ const FairyFollower = () => {
       pos.current.y += (mouse.current.y - pos.current.y) * 0.1;
 
       if (fairyRef.current) {
-        fairyRef.current.style.transform = `translate(${pos.current.x - 60}px, ${pos.current.y - 40}px)`;
+        fairyRef.current.style.transform = `translate(${pos.current.x - 120}px, ${pos.current.y - 40}px)`;
       }
 
       requestAnimationFrame(animate);
