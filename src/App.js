@@ -5,27 +5,25 @@ import buttonDemo from "./assets/button_demo-01-01.png";
 import { useEffect } from "react";
 import { FaKickstarter } from "react-icons/fa6";
 import { FaPatreon } from "react-icons/fa6";
-import FairyFollower from './FairyFollower';
-
+import FairyFollower from "./FairyFollower";
 
 function App() {
   const [activeSection, setActiveSection] = useState("inicio");
   const [showDemo, setShowDemo] = useState(false);
   useEffect(() => {
-  const handleMouseMove = (e) => {
-    const { innerWidth, innerHeight } = window;
-    const offsetX = (e.clientX / innerWidth - 0.5) * 10 * -1;
+    const handleMouseMove = (e) => {
+      const { innerWidth, innerHeight } = window;
+      const offsetX = (e.clientX / innerWidth - 0.5) * 10 * -1;
       const offsetY = (e.clientY / innerHeight - 0.5) * 10 * -1;
-    const background = document.querySelector('.background');
-    if (background) {
-      background.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
-    }
-  };
+      const background = document.querySelector(".background");
+      if (background) {
+        background.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
+      }
+    };
 
-  window.addEventListener('mousemove', handleMouseMove);
-  return () => window.removeEventListener('mousemove', handleMouseMove);
-}, []);
-
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, []);
 
   const renderContent = () => {
     switch (activeSection) {
@@ -42,10 +40,7 @@ function App() {
                 rel="noopener noreferrer"
                 className="btn-icon"
               >
-                <FaPatreon
-                  alt="Patreon Icon"
-                  className="button-icon"
-                />
+                <FaPatreon alt="Patreon Icon" className="button-icon" />
                 <h2> Patreon</h2>
               </a>
               {/* Botón de Kickstarter con icono */}
@@ -55,10 +50,8 @@ function App() {
                 rel="noopener noreferrer"
                 className="btn-icon"
               >
-                <FaKickstarter
-                  alt="Kickstarter Icon"
-                  className="button-icon"
-                /><h2> Kickstarter</h2>
+                <FaKickstarter alt="Kickstarter Icon" className="button-icon" />
+                <h2> Kickstarter</h2>
               </a>
             </div>
           </div>
@@ -116,7 +109,11 @@ function App() {
       default:
         return (
           <div className="content">
-            <img src="/logo2.png" alt="Neverworld" className="logo-in-content" />
+            <img
+              src="/logo2.png"
+              alt="Neverworld"
+              className="logo-in-content"
+            />
 
             {!showDemo ? (
               <button
@@ -148,18 +145,11 @@ function App() {
 
   return (
     <div className="app-wrapper">
-       <FairyFollower />
-       <video
-      className="video-background"
-      autoPlay
-      muted
-      loop
-      playsInline
-    >
-      <source src="/videos/kairos-bg.mp4" type="video/mp4" />
-      Tu navegador no soporta video HTML5.
-    </video>
+      <FairyFollower />
+
       <div className="background" />
+
+      <img src="/kairos_animation_back1.gif" alt="Kairos" className="character-gif" />
 
       <div className="hero">
         <nav className="navbar">
