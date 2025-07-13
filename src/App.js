@@ -10,6 +10,7 @@ import FairyFollower from "./FairyFollower";
 function App() {
   const [activeSection, setActiveSection] = useState("inicio");
   const [showDemo, setShowDemo] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   useEffect(() => {
     const handleMouseMove = (e) => {
       const { innerWidth, innerHeight } = window;
@@ -43,15 +44,15 @@ function App() {
                 <FaPatreon alt="Patreon Icon" className="button-icon" />
                 <h2> Patreon</h2>
               </a>
-              {/* Botón de Kickstarter con icono */}
+
+              {/* Botón de Indiegogo con icono */}
               <a
-                href="https://kickstarter.com"
+                href="https://www.indiegogo.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-icon"
               >
-                <FaKickstarter alt="Kickstarter Icon" className="button-icon" />
-                <h2> Kickstarter</h2>
+                <h2>Indiegogo</h2>
               </a>
             </div>
           </div>
@@ -149,7 +150,11 @@ function App() {
 
       <div className="background" />
 
-      <img src="/kairos_animation_back1.gif" alt="Kairos" className="character-gif" />
+      <img
+        src="/kairos_animation_back1.gif"
+        alt="Kairos"
+        className="character-gif"
+      />
 
       <div className="hero">
         <nav className="navbar">
@@ -158,6 +163,7 @@ function App() {
               onClick={() => {
                 setActiveSection("inicio");
                 setShowDemo(false);
+                setMenuOpen(false);
               }}
               className={activeSection === "inicio" ? "active" : ""}
               src="/nwlogo2-01.png"
@@ -165,24 +171,35 @@ function App() {
             />
           </div>
 
-          <div className="nav-links">
+          <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
+            ☰
+          </div>
+
+          <div className={`nav-links ${menuOpen ? "open" : ""}`}>
             <button
               onClick={() => {
                 setActiveSection("inicio");
                 setShowDemo(false);
+                setMenuOpen(false);
               }}
               className={activeSection === "inicio" ? "active" : ""}
             >
               Inicio
             </button>
             <button
-              onClick={() => setActiveSection("apoyar")}
+              onClick={() => {
+                setActiveSection("apoyar");
+                setMenuOpen(false);
+              }}
               className={activeSection === "apoyar" ? "active" : ""}
             >
               Apoyar el proyecto
             </button>
             <button
-              onClick={() => setActiveSection("sobre")}
+              onClick={() => {
+                setActiveSection("sobre");
+                setMenuOpen(false);
+              }}
               className={activeSection === "sobre" ? "active" : ""}
             >
               Sobre Neverworld

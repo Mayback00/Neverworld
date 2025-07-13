@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap");
 
 body,
 html,
@@ -6,7 +6,7 @@ html,
   margin: 0;
   padding: 0;
   height: 100%;
-  font-family: 'Uncial Antiqua', cursive;
+  font-family: "Uncial Antiqua", cursive;
 }
 
 .app-wrapper {
@@ -17,7 +17,7 @@ html,
 }
 
 .background {
-  background-image: url('/img/Cover3.png');
+  background-image: url("/img/Cover3.png");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -43,7 +43,8 @@ html,
 }
 
 @keyframes float {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateX(-50%) translateY(0);
   }
   50% {
@@ -71,6 +72,14 @@ html,
   padding: 0 2rem;
   margin-bottom: 40px;
   height: 20px;
+}
+
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  z-index: 100;
 }
 
 .logo {
@@ -161,7 +170,7 @@ html,
   border-radius: 12px;
   font-size: 1.1rem;
   line-height: 1.6;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   font-weight: 400;
 }
 
@@ -223,7 +232,7 @@ html,
   color: white;
   font-size: 1.2rem;
   font-weight: bold;
-  font-family: 'Uncial Antiqua', cursive;
+  font-family: "Uncial Antiqua", cursive;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
   pointer-events: none;
 }
@@ -238,7 +247,7 @@ html,
   color: white;
   font-size: 1.2rem;
   font-weight: bold;
-  font-family: 'Uncial Antiqua', cursive;
+  font-family: "Uncial Antiqua", cursive;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
   pointer-events: none;
 }
@@ -327,15 +336,29 @@ html,
 /* ---------------------- */
 /*       RESPONSIVE       */
 /* ---------------------- */
+
 @media (max-width: 768px) {
   .app-wrapper {
     scroll-snap-type: none;
+  }
+
+  .character-gif {
+    width: 100vw;
+    bottom: 25%;
   }
 
   .hero {
     padding: 1rem;
     align-items: center;
     text-align: center;
+    justify-content: flex-start;
+  }
+
+  .content {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 225px;
   }
 
   .navbar {
@@ -344,10 +367,83 @@ html,
     gap: 1rem;
   }
 
+  .hamburger {
+    display: block;
+    position: absolute;
+    left: -6.5rem;
+    top: 1rem;
+    z-index: 100;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction:column;
+    align-items: flex-start;
+    position: absolute;
+    top: 0px;
+    left: -122px;
+    width: 85%;
+    height:  100vh;
+    padding: 1rem 1.5rem;
+    z-index: 99;
+    background: rgba(0, 0, 0, 0.4);
+    transform: translateY(-20px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    border-radius: 5px;
+  }
+
+  .nav-links.open {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all;
+  }
+
+  .nav-links button {
+    margin: 0.5rem 0;
+    transform: translateX(-20px);
+    opacity: 0;
+    transition: all 0.3s ease;
+  }
+
+  .nav-links.open button {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* Cascade Effect */
+  .nav-links.open button:nth-child(1) {
+    transition-delay: 0.1s;
+  }
+
+  .nav-links.open button:nth-child(2) {
+    transition-delay: 0.2s;
+  }
+
+  .nav-links.open button:nth-child(3) {
+    transition-delay: 0.3s;
+  }
+
   .logo {
     position: static;
     margin-top: 1rem;
     text-align: center;
+  }
+
+  .logo-in-content {
+    margin: 0 auto 2rem auto;
+    display: block;
+  }
+
+  .btn-image {
+    margin: 0px auto;
+    display: flex;
+  }
+
+  .btn-image {
+    width: 90%;
+    height: 72px;
   }
 
   .logo img {
@@ -368,11 +464,6 @@ html,
     font-size: 18px;
   }
 
-  .btn-image {
-    width: 90%;
-    height: 60px;
-  }
-
   .btn-text {
     font-size: 1rem;
   }
@@ -383,6 +474,7 @@ html,
   }
 
   .blog {
+    max-width: 83vw;
     font-size: 1rem;
     padding: 1rem;
   }
@@ -396,6 +488,21 @@ html,
     position: static;
     justify-content: center;
     margin-top: 1rem;
+  }
+
+  .social {
+    position: fixed;
+    top: 5%;
+    right: 0.5rem;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 0.5rem;
+    border-radius: 8px;
+    z-index: 100;
+  }
+
+  .social a {
+    margin: 0.3rem 0;
   }
 
   .footer {
