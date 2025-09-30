@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "./HeroSection.css";
 import { MdLanguage } from "react-icons/md";
+import { FaKickstarter, FaPatreon } from "react-icons/fa6";
 import buttonDemo from "./assets/button_demo-01-01.png";
-import { FaKickstarter } from "react-icons/fa6";
-import { FaPatreon } from "react-icons/fa6";
 import FairyFollower from "./FairyFollower";
 
 function App() {
-  const [activeSection, setActiveSection] = useState("home");
+  const [activeSection, setActiveSection] = useState("inicio");
   const [showDemo, setShowDemo] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -17,6 +16,7 @@ function App() {
       const offsetX = (e.clientX / innerWidth - 0.5) * 10 * -1;
       const offsetY = (e.clientY / innerHeight - 0.5) * 10 * -1;
       const background = document.querySelector(".background");
+
       if (background) {
         background.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
       }
@@ -28,13 +28,14 @@ function App() {
 
   const renderContent = () => {
     switch (activeSection) {
-      case "support":
+      case "apoyar":
         return (
           <div className="content">
-            <h1>Do you want to support the project?</h1>
-            <h2>- Be part of the Lost Children -</h2>
+            <h1>¿Quieres apoyar el proyecto?</h1>
+            <h2>- Sé parte de los niños perdidos -</h2>
+
             <div className="support-buttons">
-              {/* Patreon button with icon */}
+              {/* Botón de Patreon */}
               <a
                 href="https://patreon.com"
                 target="_blank"
@@ -45,7 +46,7 @@ function App() {
                 <h2>Patreon</h2>
               </a>
 
-              {/* Indiegogo button with icon */}
+              {/* Botón de Indiegogo */}
               <a
                 href="https://www.indiegogo.com"
                 target="_blank"
@@ -58,49 +59,55 @@ function App() {
           </div>
         );
 
-      case "about":
+      case "sobre":
         return (
           <div className="content blog">
-            <h1>About Neverworld</h1>
+            <h1>Sobre Neverworld</h1>
             <p>
-              Neverworld is a realm suspended between reality and dreams. A refuge
-              for those who lost their destiny… or never had one. Once, a group
-              of children forgotten by the real world arrived here. Among them,
-              a different young boy: Peter, who became their leader and guide.
+              Neverworld es un mundo suspendido entre la realidad y los sueños.
+              Un refugio para los que perdieron su destino… o nunca tuvieron
+              uno. Aquí llegaron, alguna vez, un grupo de niños olvidados por el
+              mundo real. Y entre ellos, un joven diferente: Peter, quien se
+              convirtió en su líder y guía.
             </p>
+
             <p>
-              It was said Peter was the only one capable of keeping the Ignis
-              light pure, and as long as his heart remained uncorrupted, the
-              Lost Children would always have a leader to guide them in their
-              new adventure.
+              Se decía que Peter era el único capaz de mantener la luz del Ignis
+              pura y que mientras su corazón no se corrompiera, los Niños
+              Perdidos tendrían un líder que los guiaría en su nueva aventura.
             </p>
+
             <p>
-              But one day, everything changed. They say Peter lost the one he
-              loved most: Wendy, taken by the ruthless Captain Hook. Since then,
-              Peter was never seen again. Some believe he died fighting the
-              captain in one final battle. Others believe his heart broke and he
-              faded away into some corner of the world, carrying his light with
-              him… leaving behind the Lost Children, Tinkerbell, and all he once
-              defended.
+              Pero un día, todo cambió. Se dice que Peter perdió a quien más
+              amaba: Wendy, arrebatada por el despiadado Capitán Hook. Desde
+              entonces, Peter jamás volvió a ser visto. Algunos creen que murió
+              enfrentando al capitán en una última batalla. Otros, que su
+              corazón se rompió y se desvaneció en algún rincón del mundo,
+              llevándose con él su luz… y dejando atrás a los Niños Perdidos, a
+              Thinkerbell, y a todo lo que una vez defendió.
             </p>
+
             <p>
-              From then on, the world slowly fell under the control of the tyrant
-              pirate captain: Night Hook, lord of the Obsidian Wail and commander
-              of the dark pirates, spreading his influence like a never-ending
-              storm.
+              Desde entonces, el mundo fue cayendo lentamente bajo el control
+              del tirano capitán pirata: Night Hook, señor del Llanto Obsidiana
+              y comandante de los piratas oscuros, que extiende su influencia
+              como una tormenta sin fin.
             </p>
+
             <p>
-              In this setting begins the journey of Kairos, a young Lost Child
-              with a mysterious bond to the Ignis. Banished by his companions for
-              believing Peter still lives—and endangering them by provoking the
-              pirates with rumors of his return—Kairos sets out to find him,
-              driven by a force he cannot explain… and by the stories still
-              whispered at night by Bell, the guardian of the Lost Children.
+              En este contexto nace el viaje de Kairos, un joven Niño Perdido
+              con un lazo misterioso con el Ignis. Desterrado por sus propios
+              compañeros por creer que Peter aún vive y poniendo en riesgo a los
+              niños perdidos al amenazar a los piratas con su regreso, Kairos se
+              lanza a la travesía de encontrarlo, impulsado por una fuerza
+              interior que no puede explicar… y por las historias que la
+              guardiana de los niños perdidos Bell aún susurra por las noches.
             </p>
+
             <p>
-              While everyone else thinks Peter is just a myth, Kairos searches
-              for him as if he were the only real thing. Because deep in his
-              soul, he knows the light of Pan has not gone out.
+              Mientras todos piensan que Peter es solo un mito, Kairos lo busca
+              como si fuera lo único real. Porque en lo más profundo de su alma,
+              él sabe que la luz de Pan no se ha apagado.
             </p>
           </div>
         );
@@ -118,11 +125,9 @@ function App() {
               <button
                 onClick={() => setShowDemo(true)}
                 className="btn-image"
-                style={{
-                  backgroundImage: `url(${buttonDemo})`,
-                }}
+                style={{ backgroundImage: `url(${buttonDemo})` }}
               >
-                <span className="btn-text">WATCH DEMO</span>
+                <span className="btn-text">VER DEMO</span>
               </button>
             ) : (
               <div className="video-wrapper">
@@ -130,7 +135,7 @@ function App() {
                   width="100%"
                   height="400"
                   src="https://www.youtube.com/embed/EMJ4U0Pe008"
-                  title="Neverworld Demo"
+                  title="Demo Neverworld"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
@@ -159,11 +164,11 @@ function App() {
           <div className="logo">
             <img
               onClick={() => {
-                setActiveSection("home");
+                setActiveSection("inicio");
                 setShowDemo(false);
                 setMenuOpen(false);
               }}
-              className={activeSection === "home" ? "active" : ""}
+              className={activeSection === "inicio" ? "active" : ""}
               src="/nwlogo2-01.png"
               alt="Neverworld Logo"
             />
@@ -176,31 +181,33 @@ function App() {
           <div className={`nav-links ${menuOpen ? "open" : ""}`}>
             <button
               onClick={() => {
-                setActiveSection("home");
+                setActiveSection("inicio");
                 setShowDemo(false);
                 setMenuOpen(false);
               }}
-              className={activeSection === "home" ? "active" : ""}
+              className={activeSection === "inicio" ? "active" : ""}
             >
-              Home
+              Inicio
             </button>
+
             <button
               onClick={() => {
-                setActiveSection("support");
+                setActiveSection("apoyar");
                 setMenuOpen(false);
               }}
-              className={activeSection === "support" ? "active" : ""}
+              className={activeSection === "apoyar" ? "active" : ""}
             >
-              Support the Project
+              Apoyar el proyecto
             </button>
+
             <button
               onClick={() => {
-                setActiveSection("about");
+                setActiveSection("sobre");
                 setMenuOpen(false);
               }}
-              className={activeSection === "about" ? "active" : ""}
+              className={activeSection === "sobre" ? "active" : ""}
             >
-              About Neverworld
+              Sobre Neverworld
             </button>
           </div>
 
@@ -211,12 +218,14 @@ function App() {
                 alt="Discord"
               />
             </a>
+
             <a href="https://www.instagram.com/neverworld_videogame/">
               <img
                 src="https://img.icons8.com/ios-filled/24/ffffff/instagram-new.png"
                 alt="Instagram"
               />
             </a>
+
             <a href="#">
               <img
                 src="https://img.icons8.com/?size=100&id=9467&format=png&color=ffffff"
@@ -225,30 +234,32 @@ function App() {
             </a>
           </div>
         </nav>
+
         {renderContent()}
       </div>
+
       <footer className="footer">
         <div className="footer-logo">
           <img src="/nwlogo2-01.png" alt="Neverworld Logo" />
         </div>
 
         <div className="footer-links">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Service</a>
-          <a href="#">About Neverworld</a>
-          <a href="#">Contact Us</a>
-          <a href="#">Help Center</a>
+          <a href="#">Política de privacidad</a>
+          <a href="#">Términos de servicio</a>
+          <a href="#">Sobre Neverworld</a>
+          <a href="#">Contáctanos</a>
+          <a href="#">Centro de ayuda</a>
         </div>
 
         <div className="footer-rating">
-          <img src="/not_rated.png" alt="ESRB Rating" />
+          <img src="/not_rated.png" alt="Clasificación ESRB" />
         </div>
 
         <div className="footer-disclaimer">
           <p>
-            Neverworld™ is a fictional brand created for interactive projects.
-            Its characters, names, and places are products of imagination or
-            inspired by classic works.
+            Neverworld™ es una marca ficticia creada para proyectos
+            interactivos. Sus personajes, nombres y lugares son productos de la
+            imaginación o inspirados de obras clásicas.
           </p>
         </div>
 
@@ -258,7 +269,8 @@ function App() {
 
         <div className="footer-copyright">
           <p>
-            Copyright ◙ MAYBACK STUDIO. All rights will one day be reserved.
+            Copybright ◙ MAYBACK STUDIO. Todos los derechos algún día serán
+            reservados.
           </p>
         </div>
       </footer>
