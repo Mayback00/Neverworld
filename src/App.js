@@ -226,9 +226,15 @@ function App() {
               />
             </a>
 
-            <a href="#">
+            <a href="https://neverworld.vercel.app">
               <img
-                src="https://img.icons8.com/?size=100&id=9467&format=png&color=ffffff"
+                src="https://img.icons8.com/?size=100&id=ly7tzANRt33n&format=png&color=000000"
+                alt="lang"
+              />
+            </a>
+            <a href="https://neverworld-en.vercel.app">
+              <img
+                src="https://img.icons8.com/?size=100&id=ShNNs7i8tXQF&format=png&color=000000"
                 alt="lang"
               />
             </a>
